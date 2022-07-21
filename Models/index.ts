@@ -20,4 +20,5 @@ export interface IProduct {
   reiews: Array<IReview>; //": [],
   relatedProducts: string; //": [],
   id: string; //": "1",
+  images: Array<string>; //": []
 }

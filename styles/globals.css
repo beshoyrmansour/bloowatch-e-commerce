@@ -17,3 +17,18 @@ a {
   font-family: 'Noto Sans', sans-serif;
   box-sizing: border-box;
 }
+
+.page_title_wrapper {
+  margin-bottom: 1rem;
+  background-color: #1415b4;
+  color: #fff;
+  margin-bottom: 3.5rem;
+
+}
+
+.page_title {
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 5rem 0px;
+
+}

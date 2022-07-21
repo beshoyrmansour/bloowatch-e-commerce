@@ -87,7 +87,9 @@
   width: 100%;
 }
 
-.product_oldPrice {}
+.product_oldPrice {
+  text-decoration: line-through;
+}
 
 .product_price_wrapper>div::before {
   content: '$';

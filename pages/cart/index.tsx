@@ -68,5 +68,14 @@ const Cart: NextPage = () => {
     </div>
   )
 }
+export async function getServerSideProps() {
+  // const res = await fetch(`${BaseURL}${EndPoints.products}`)
+  // const data = await res.json()
 
+  return {
+    props: {
+      pageName: 'Cart'
+    }
+  }
+}
 export default Cart
