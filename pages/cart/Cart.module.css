@@ -1,7 +1,3 @@
-.container {
-  padding: 0 2rem;
-}
-
 .main {
   min-height: 65vh;
   padding: 4rem 0;
@@ -111,4 +107,39 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.price:before {
+  content: '$';
+  padding-right: 3px;
+}
+
+.totalTitle {
+  font-size: 2.5rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+.QuantityControls {
+  max-width: 70px;
+
+}
+
+.btnColor {
+  border-color: #1415b4;
+  background-color: #1415b4;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 3rem;
+  padding: 8px 16px;
+  font-size: 1.2rem;
+
+}
+
+.btnColor:hover,
+.btnColor:focus,
+.btnColor:active {
+  border-color: #10108e;
+  background-color: #10108e;
+  color: #fff;
 }

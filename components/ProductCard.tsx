@@ -12,7 +12,7 @@ const ProductCard = (props: Props) => {
 
   const { product } = props
   return (
-    <div key={product.id} className='col-12 col-md-6 col-lg-4'>
+    <div className='col-12 col-md-6 col-lg-4'>
       <div className={styles.productInfo} onClick={() => router.push(`/products/${product.id}`)}>
         <div className={styles.product_image_wrapper}>
           {product.oldPrice && (<span className={styles.onsale}>Sale</span>)}

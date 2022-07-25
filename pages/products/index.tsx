@@ -1,16 +1,33 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
 import Filters from '../../components/Filters'
 import ProductCard from '../../components/ProductCard'
-import { IProduct, IReview } from '../../Models'
+import { IProduct } from '../../Models'
+import { pages } from '../../Models/consts'
 import styles from '../../styles/products.module.css'
 import { BaseURL, EndPoints } from '../api/EndPoints'
 
-const Products: NextPage<{
-  products: IProduct[]
-}> = (props) => {
+type Props = {
+  pageName: string;
+  products: IProduct[];
+}
+const Products: NextPage<Props> = (props) => {
   const { products } = props;
+  const [productsList, setproductsList] = useState(products);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+  }
+  const handleFilter = (filter: string) => {
+    setproductsList(products.filter(product => product.department === filter));
+  }
+  const handleClearFilter = () => {
+    setproductsList(products);
+  }
+
   return (
     <div>
       <Head>
@@ -26,7 +43,7 @@ const Products: NextPage<{
             <div className="col-12 col-md-9">
               <div className="container">
                 <div className="row">
-                  {products && products.length > 0 && products.map((product) => (
+                  {productsList && productsList.length > 0 && productsList.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
                 </div>
@@ -50,7 +67,7 @@ export async function getServerSideProps() {
   return {
     props: {
       products: data || [],
-      pageName: 'Products'
+      pageName: pages.products
     }
   }
 }

@@ -8,8 +8,8 @@ export interface IProduct {
   createdAt: string; //": "2022-07-19T15:44:02.454Z",
   name: string; //": "Modern Steel Soap",
   image: string; //": "http://loremflickr.com/640/480/fashion",
-  oldPrice: string; //": "548.00",
-  price: string; //": "475.00",
+  oldPrice: number; //": "548.00",
+  price: number; //": "475.00",
   department: string; //": "Movies",
   product: string; //": "Hat",
   material: string; //": "Plastic",
@@ -22,3 +22,14 @@ export interface IProduct {
   id: string; //": "1",
   images: Array<string>; //": []
 }
+export interface ICartProduct {
+  createdAt: string; //": "2022-07-19T15:44:02.454Z",
+  name: string; //": "Modern Steel Soap",
+  image: string; //": "http://loremflickr.com/640/480/fashion",
+  quantity: number; //": "548.00",
+  product_id: string; //": "1",
+  id: string; //": "1",
+  price: number; //": "475.00",
+
+}
+
